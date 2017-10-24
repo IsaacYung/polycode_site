@@ -1,0 +1,10 @@
+@import 'foundation_and_overrides';
+
+.search-wrapper {
+  .search {
+    input {
+      width: 45rem;
+    }
+    color: $white;
+  }
+}
