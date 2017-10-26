@@ -1,10 +1,8 @@
 @import 'foundation_and_overrides';
 
-.search-wrapper {
-  .search {
-    input {
-      width: 45rem;
-    }
+header {
+  .sign {
     color: $white;
+    font-size: 1rem;
   }
 }

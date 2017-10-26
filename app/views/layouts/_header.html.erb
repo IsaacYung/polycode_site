@@ -1,28 +1,25 @@
 <header>
   <div class="search-wrapper">
     <form class="" action="index.html" method="post">
-      <!-- Expandable Textfield -->
-      <div class="search row">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable large-8 columns">
-          <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-            <i class="material-icons">search</i>
-          </label>
-          <div class="mdl-textfield__expandable-holder">
-            <input class="mdl-textfield__input" type="text" id="sample6">
-            <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-          </div>
-        </div>
-        <div class="large-4 columns">
-          <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Search</button>
-          <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Compare</button>
-        </div>
+
+      <!-- Textfield with Floating Label -->
+      <div class="mdl-textfield mdl-js-textfield  ">
+        <input class="mdl-textfield__input" type="text" id="sample3">
+        <label class="mdl-textfield__label" for="sample3">Language</label>
       </div>
+
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Compare
+      </button>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Search
+      </button>
+      <a href="#" class="sign">
+        Sign
+      </a>
+      <%= render 'layouts/sign' %>
     </form>
+
   </div>
-  <div class="sign-wrapper">
-    <a href="#" class="sign">
-      Sign
-    </a>
-    <%= render 'layouts/sign' %>
-  </div>
+
 </header>

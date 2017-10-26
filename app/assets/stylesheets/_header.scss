@@ -1,6 +1,12 @@
 @import 'foundation_and_overrides';
 
 header {
-  height: 4rem;
+  height: 5rem;
   background-color: $primary-color;
+
+  .search-wrapper {
+    .mdl-textfield__label {
+      color: $white;
+    }
+  }
 }

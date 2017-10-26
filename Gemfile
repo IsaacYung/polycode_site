@@ -54,3 +54,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Others
 gem 'material_design_lite-rails', '~> 1.3'
+gem 'flexirest'
