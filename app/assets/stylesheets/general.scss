@@ -1,3 +1,11 @@
-.hide{
+.hide {
   display: none;
+}
+
+.no-bullet {
+  padding: 0;
+
+  li {
+    list-style-type: none;
+  }
 }

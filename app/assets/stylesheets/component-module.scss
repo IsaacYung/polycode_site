@@ -1,0 +1,19 @@
+@import "foundation_and_overrides";
+
+.component-module {
+  h2 {
+    background-color: $blue;
+    color: $white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+  }
+
+  .structure {
+    ul {
+      padding: 0.5rem;
+      margin-top: 0;
+    }
+  }
+}
