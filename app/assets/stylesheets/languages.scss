@@ -1,3 +1,14 @@
-// Place all the styles related to the languages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "foundation_and_overrides";
+
+.language-wrapper {
+  h1 {
+    .language-title {
+      color: $black;
+      font-size: 4rem;
+      font-weight: 900;
+      text-align: center;
+      margin: 0;
+      display: block;
+    }
+  }
+}
