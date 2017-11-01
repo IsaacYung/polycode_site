@@ -1,25 +1,11 @@
-<header>
-  <div class="search-wrapper">
+<header class="row full-width header">
+  <div class="search-wrapper large-9 columns">
     <form class="" action="index.html" method="post">
-
-      <!-- Textfield with Floating Label -->
-      <div class="mdl-textfield mdl-js-textfield  ">
-        <input class="mdl-textfield__input" type="text" id="sample3">
-        <label class="mdl-textfield__label" for="sample3">Language</label>
-      </div>
-
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+      <label for="language">Language</label>
+      <input type="text" name="language" value="">
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
         Compare
       </button>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-        Search
-      </button>
-      <a href="#" class="sign">
-        Sign
-      </a>
-      <%= render 'layouts/sign' %>
     </form>
-
   </div>
-
 </header>
