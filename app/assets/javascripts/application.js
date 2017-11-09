@@ -16,8 +16,8 @@
 //= require foundation.core
 //= require foundation.tabs
 //= require material
-//= require_tree .
-
-
+//= require cable
+//= require orchestrator
+//= require syntax
 
 $(document).foundation();
