@@ -1,13 +1,14 @@
-(function(global, $){
+(function(global, $) {
   function Syntax($syntaxesWrapper, orchestrator) {
-    this.structureData = $syntaxesWrapper.find('#structure');
+    this.structureData = $syntaxesWrapper.find('#syntax-structure');
     this.orchestrator = orchestrator;
+    this.loading = $syntaxesWrapper.find('#spinner');
+    this.structureContent = $syntaxesWrapper.find('.structure-content');
   }
 
   var fn = Syntax.prototype
 
-  fn.bindEvents = function () {
-  };
+  fn.bindEvents = function() {};
 
   fn.structureRender = function(title, content) {
     htmlRender = "<li><h3>" + title + "</h3>"
@@ -20,13 +21,18 @@
 
   fn.loadComponent = function() {
     var self = this;
-    var syntaxPromise = this.orchestrator.get('/syntaxes/');
+    var syntaxPromise = this.orchestrator.get('/syntaxes/', this.loading);
 
-    syntaxPromise.done(function(data){
+    syntaxPromise.done(function(data) {
       $.each(data.structure.loop, function(key, value) {
         self.structureRender(key, value)
       });
-    }).fail(console.log("Falhou"));
+      self.structureContent.animate({
+        opacity: 1
+      }, 500);
+    }).fail(function() {
+      console.log("Falhou")
+    });
   };
 
   global.onload = function() {

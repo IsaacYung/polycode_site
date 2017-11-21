@@ -1,5 +1,8 @@
 var Orchestrator = (function(global, $){
   function Orchestrator() {
+
+    this.loading = new Loading();
+
   }
 
   var fn = Orchestrator.prototype
@@ -14,9 +17,13 @@ var Orchestrator = (function(global, $){
     return url.match(regex)[1]
   }
 
-  fn.get = function (url) {
+  fn.get = function (url, loading) {
     var self = this;
-    return $.getJSON(url + this.getLanguageName())
+    return $.getJSON(url + this.getLanguageName(), function(){
+      // self.loading.startLoading(loading)
+    }).done(function(){
+      self.loading.stopLoading(loading)
+    })
   };
 
   return Orchestrator

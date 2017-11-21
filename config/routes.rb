@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'languages#show'
+  root 'application#show'
 
   scope 'languages' do
     get '/:name', to: 'languages#show'

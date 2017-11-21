@@ -17,6 +17,7 @@
 //= require foundation.tabs
 //= require material
 //= require cable
+//= require loading
 //= require orchestrator
 //= require syntax
 

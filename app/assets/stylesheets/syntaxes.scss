@@ -1,16 +1,11 @@
 @import "foundation_and_overrides";
 
 .syntaxes-wrapper {
-  .structure-data {
-    background-color: lighten($light-gray, 6%);
-    padding: 1rem;
+  .structure {
+    
   }
 
-  .structure {
-    h3 {
-      font-size: 1.6rem;
-      font-weight: bold;
-      margin: 0;
-    }
+  .syntax-structure {
+    min-height: 19rem;
   }
 }
