@@ -52,5 +52,4 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.api_server_url = 'http://59f126d2a118a000126fbde3.mockapi.io'
 end

@@ -2,6 +2,7 @@ var Orchestrator = (function(global, $){
   function Orchestrator() {
 
     this.loading = new Loading();
+    this.BASEPATH = 'http://59f126d2a118a000126fbde3.mockapi.io';
 
   }
 
@@ -19,7 +20,7 @@ var Orchestrator = (function(global, $){
 
   fn.get = function (url, loading) {
     var self = this;
-    return $.getJSON(url + this.getLanguageName(), function(){
+    return $.getJSON(this.BASEPATH + url + this.getLanguageName(), function(){
       // self.loading.startLoading(loading)
     }).done(function(){
       self.loading.stopLoading(loading)

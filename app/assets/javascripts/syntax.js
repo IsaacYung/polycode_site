@@ -21,7 +21,7 @@
 
   fn.loadComponent = function() {
     var self = this;
-    var syntaxPromise = this.orchestrator.get('/syntaxes/', this.loading);
+    var syntaxPromise = this.orchestrator.get('/syntax/', this.loading);
 
     syntaxPromise.done(function(data) {
       $.each(data.structure.loop, function(key, value) {
