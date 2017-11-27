@@ -13,10 +13,11 @@
   fn.bindEvents = function() {};
 
   fn.structureRender = function(title, content) {
-    htmlRender = "<li><h3>" + title + "</h3>"
-    htmlRender += '<div class="structure-data">'
-    htmlRender += content
-    htmlRender += "</div></li>"
+    htmlRender = `<li>
+                  <h3>${title}</h3>
+                  <div class="structure-data">
+                  ${content}</div>
+                  </li>`
 
     this.structureData.append(htmlRender)
   }
