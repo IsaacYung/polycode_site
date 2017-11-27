@@ -20,5 +20,6 @@
 //= require loading
 //= require orchestrator
 //= require syntax
+//= require structure
 
 $(document).foundation();

@@ -1,6 +1,6 @@
 (function(global, $) {
-  function Syntax($syntaxesWrapper, orchestrator) {
-    this.structureData = $syntaxesWrapper.find('#syntax-structure');
+  function Structure($wrapper, orchestrator) {
+    this.structureData = $wrapper.find('#syntax-structure');
     this.orchestrator = orchestrator;
     this.spinner = $syntaxesWrapper.find('#spinner');
     this.structureContent = $syntaxesWrapper.find('.structure-content');
@@ -29,10 +29,8 @@
       $.each(data.structure.loop, function(key, value) {
         self.structureRender(key, value)
       });
-      self.structureContent.animate({
-        opacity: 1
-      }, 500);
 
+      self.structureContent.animate({ opacity: 1}, 500);
       self.loading.stopLoading(self.spinner);
     }).fail(function() {
       console.log("Falhou")
