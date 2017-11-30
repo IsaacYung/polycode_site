@@ -1,45 +1,30 @@
-(function(global, $) {
-  function Structure($wrapper, orchestrator) {
-    this.structureData = $wrapper.find('#syntax-structure');
-    this.orchestrator = orchestrator;
-    this.spinner = $syntaxesWrapper.find('#spinner');
-    this.structureContent = $syntaxesWrapper.find('.structure-content');
+var Structure = (function(global, $) {
+  function Structure($wrapper, resource) {
+    ANIMATION_SPEED = 500;
 
+    this.spinner = $wrapper.find(Global.SPINNER);
+    this.structureContent = $wrapper.find(Global.STRUCTURE_CONTENT);
+    this.resource = `/${resource}/`;
+
+    this.restClient = new RestClient();
     this.loading = new Loading();
   }
 
-  var fn = Syntax.prototype
+  var fn = Structure.prototype
 
-  fn.bindEvents = function() {};
-
-  fn.structureRender = function(title, content) {
-    htmlRender = "<li><h3>" + title + "</h3>"
-    htmlRender += '<div class="structure-data">'
-    htmlRender += content
-    htmlRender += "</div></li>"
-
-    this.structureData.append(htmlRender)
-  }
-
-  fn.loadComponent = function() {
+  fn.loadData = function() {
     var self = this;
-    var syntaxPromise = this.orchestrator.get('/syntax/');
+    var requestPromise = this.restClient.get(this.resource);
 
-    syntaxPromise.done(function(data) {
-      $.each(data.structure.loop, function(key, value) {
-        self.structureRender(key, value)
-      });
-
-      self.structureContent.animate({ opacity: 1}, 500);
+    return requestPromise.done(function(data) {
+      self.structureContent.animate({ opacity: 1 }, ANIMATION_SPEED);
       self.loading.stopLoading(self.spinner);
+
+      return data;
     }).fail(function() {
       console.log("Falhou")
     });
   };
 
-  global.onload = function() {
-    syntax = new Syntax($('.syntaxes-wrapper'), new Orchestrator());
-    syntax.bindEvents();
-    syntax.loadComponent();
-  }
+  return Structure
 })(window, jQuery);

@@ -1,48 +1,63 @@
 (function(global, $) {
-  function Syntax($syntaxesWrapper, orchestrator) {
+  function Syntax($syntaxesWrapper) {
     this.structureData = $syntaxesWrapper.find('#syntax-structure');
-    this.orchestrator = orchestrator;
     this.spinner = $syntaxesWrapper.find('#spinner');
     this.structureContent = $syntaxesWrapper.find('.structure-content');
 
-    this.loading = new Loading();
+    this.structure = new Structure($syntaxesWrapper, 'syntaxes')
+
+    this.WORDS = {
+      "loop" : "Loop",
+      "flowControl" : "Flow Control",
+      "while" : "While",
+      "for" : "For",
+      "doWhile" : "Do while",
+      "if" : "If",
+      "case" : "Case"
+    }
   }
 
   var fn = Syntax.prototype
 
-  fn.bindEvents = function() {};
-
-  fn.structureRender = function(title, content) {
+  fn.htmlRenderContent = function(title, content) {
     htmlRender = `<li>
-                  <h3>${title}</h3>
+                  <div class="syntax-title">
+                  <h4>${this.WORDS[title]}</h4>
                   <div class="structure-data">
-                  ${content}</div>
+                  ${content}
+                  </div>
+                  </div>
                   </li>`
 
     this.structureData.append(htmlRender)
   }
 
-  fn.loadComponent = function() {
+  fn.htmlRenderSyntaxType = function(title) {
+    htmlRender = `<li>
+                  <div class="syntax-title">
+                  <h3>${this.WORDS[title]}</h3>
+                  </div>
+                  </li>`
+
+    this.structureData.append(htmlRender)
+  }
+
+  fn.jsonDataExtract = function() {
     var self = this;
-    var syntaxPromise = this.orchestrator.get('/syntax/');
 
-    syntaxPromise.done(function(data) {
-      $.each(data.structure.loop, function(key, value) {
-        self.structureRender(key, value)
-      });
-      self.structureContent.animate({
-        opacity: 1
-      }, 500);
+    this.structure.loadData().done(function(data) {
+      $.each(data.syntaxes, function(key, value) {
+        self.htmlRenderSyntaxType(key)
 
-      self.loading.stopLoading(self.spinner);
-    }).fail(function() {
-      console.log("Falhou")
+        $.each(value, function(key, value) {
+          self.htmlRenderContent(key, value)
+        })
+      })
     });
-  };
+  }
 
   global.onload = function() {
-    syntax = new Syntax($('.syntaxes-wrapper'), new Orchestrator());
-    syntax.bindEvents();
-    syntax.loadComponent();
+    syntax = new Syntax($('.syntaxes-wrapper'));
+    syntax.jsonDataExtract();
   }
 })(window, jQuery);

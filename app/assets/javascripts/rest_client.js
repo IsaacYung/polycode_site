@@ -1,11 +1,11 @@
-var Orchestrator = (function(global, $){
-  function Orchestrator() {
+var RestClient = (function(global, $){
+  function RestClient() {
 
     this.BASEPATH = 'http://59f126d2a118a000126fbde3.mockapi.io';
 
   }
 
-  var fn = Orchestrator.prototype
+  var fn = RestClient.prototype
 
   fn.bindEvents = function () {
   };
@@ -22,5 +22,5 @@ var Orchestrator = (function(global, $){
     return $.getJSON(this.BASEPATH + url + this.getLanguageName());
   };
 
-  return Orchestrator
+  return RestClient
 })(window, jQuery)

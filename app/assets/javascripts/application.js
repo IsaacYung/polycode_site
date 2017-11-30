@@ -18,7 +18,8 @@
 //= require material
 //= require cable
 //= require loading
-//= require orchestrator
+//= require rest_client
+//= require global
 //= require syntax
 //= require structure
 
