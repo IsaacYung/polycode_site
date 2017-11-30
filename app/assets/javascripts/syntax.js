@@ -21,11 +21,9 @@
 
   fn.htmlRenderContent = function(title, content) {
     htmlRender = `<li>
-                  <div class="syntax-title">
                   <h4>${this.WORDS[title]}</h4>
                   <div class="structure-data">
                   ${content}
-                  </div>
                   </div>
                   </li>`
 
@@ -34,9 +32,7 @@
 
   fn.htmlRenderSyntaxType = function(title) {
     htmlRender = `<li>
-                  <div class="syntax-title">
                   <h3>${this.WORDS[title]}</h3>
-                  </div>
                   </li>`
 
     this.structureData.append(htmlRender)
