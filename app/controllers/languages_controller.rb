@@ -1,3 +1,7 @@
 class LanguagesController < ApplicationController
-  def show; end
+  include LanguagesHelper
+
+  def show
+    @language_name = capitalize_language_name(request.original_url)
+  end
 end

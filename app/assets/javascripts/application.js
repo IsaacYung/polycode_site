@@ -19,8 +19,9 @@
 //= require cable
 //= require loading
 //= require rest_client
-//= require global
-//= require syntax
 //= require structure
+//= require characteristics
+//= require syntax
+//= require global
 
 $(document).foundation();

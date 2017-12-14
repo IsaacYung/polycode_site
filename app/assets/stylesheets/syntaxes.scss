@@ -29,4 +29,9 @@
     font-weight: bolder;
     margin-top: 10px;
   }
+
+  .syntax-content {
+    background-color: lighten($light-gray, 6%);
+    padding: 1rem;
+  }
 }

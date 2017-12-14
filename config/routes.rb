@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   scope 'integrations' do
     get '/:name', to: 'integrations#show'
   end
+
+  get '/help', to: 'help#show'
+
 end

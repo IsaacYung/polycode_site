@@ -1,4 +1,4 @@
-(function(global, $) {
+var Syntax = (function(global, $) {
   function Syntax($syntaxesWrapper) {
     this.structureData = $syntaxesWrapper.find('#syntax-structure');
     this.spinner = $syntaxesWrapper.find('#spinner');
@@ -13,7 +13,8 @@
       "for" : "For",
       "doWhile" : "Do while",
       "if" : "If",
-      "case" : "Case"
+      "case" : "Case",
+      "controlflow": "Control-Flow"
     }
   }
 
@@ -22,7 +23,7 @@
   fn.htmlRenderContent = function(title, content) {
     htmlRender = `<li>
                   <h4>${this.WORDS[title]}</h4>
-                  <div class="structure-data">
+                  <div class="syntax-content">
                   ${content}
                   </div>
                   </li>`
@@ -40,7 +41,7 @@
 
   fn.jsonDataExtract = function() {
     var self = this;
-
+    console.log("Syntax");
     this.structure.loadData().done(function(data) {
       $.each(data.syntaxes, function(key, value) {
         self.htmlRenderSyntaxType(key)
@@ -52,8 +53,5 @@
     });
   }
 
-  global.onload = function() {
-    syntax = new Syntax($('.syntaxes-wrapper'));
-    syntax.jsonDataExtract();
-  }
+  return Syntax
 })(window, jQuery);

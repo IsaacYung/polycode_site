@@ -1,7 +1,7 @@
 var RestClient = (function(global, $){
   function RestClient() {
 
-    this.BASEPATH = 'http://59f126d2a118a000126fbde3.mockapi.io';
+    this.BASEPATH = 'http://a6fda3ce.ngrok.io/languages';
 
   }
 
@@ -10,7 +10,7 @@ var RestClient = (function(global, $){
   fn.bindEvents = function () {
   };
 
-  fn.getLanguageName = function() {
+  fn.getLanguageName = function () {
     var url = window.location.pathname
     var regex = /\/languages\/(.*$)/
 
