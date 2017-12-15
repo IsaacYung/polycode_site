@@ -26,7 +26,6 @@ var Characteristic = (function(global, $) {
 
   fn.jsonDataExtract = function() {
     var self = this;
-    console.log("Char");
     this.structure.loadData().done(function(data) {
       $.each(data.characteristics, function(key, value) {
         self.htmlRenderContent(key, value)

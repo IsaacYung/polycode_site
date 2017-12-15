@@ -41,7 +41,6 @@ var Syntax = (function(global, $) {
 
   fn.jsonDataExtract = function() {
     var self = this;
-    console.log("Syntax");
     this.structure.loadData().done(function(data) {
       $.each(data.syntaxes, function(key, value) {
         self.htmlRenderSyntaxType(key)
