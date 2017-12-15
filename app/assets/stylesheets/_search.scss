@@ -14,10 +14,6 @@
   padding-top: 1.6rem;
   color: white;
   font-weight: bold;
-  padding-left: 10rem;
-  position: absolute;
-  margin-left: 3rem;
-
 
   form {
     input:focus, textarea:focus {
@@ -46,13 +42,19 @@
       color: white;
       position: relative;
       left: 6px;
-      top: 2px;
+      top: 1px;
 
       @extend .border-left-radius;
     }
 
     button {
       color: $white;
+      background-color: $dark-blue;
+      font-weight: bold;
     }
+  }
+
+  .mdl-button{
+    top: -0.5px;
   }
 }
