@@ -20,6 +20,7 @@
 //= require loading
 //= require rest_client
 //= require structure
+//= require integrations
 //= require characteristics
 //= require syntax
 //= require global

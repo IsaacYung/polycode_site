@@ -7,12 +7,13 @@ var Global = (function($) {
   var fn = Global.prototype
 
   fn.start = function(){
-    console.log("ola");
     syntax = new Syntax($('.syntaxes-wrapper'));
     characteristic = new Characteristic($('.characteristics-wrapper'));
+    integration = new Integration($('.integrations-wrapper'));
 
     characteristic.jsonDataExtract();
     syntax.jsonDataExtract();
+    integration.jsonDataExtract();
   }
 
   return new Global;
