@@ -1,7 +1,7 @@
 var RestClient = (function(global, $){
   function RestClient() {
 
-    this.BASEPATH = 'http://a6fda3ce.ngrok.io/languages';
+    this.BASEPATH = 'http://f64e4940.ngrok.io/languages';
 
   }
 

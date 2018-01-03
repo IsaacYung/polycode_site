@@ -1,6 +1,7 @@
 var Structure = (function(global, $) {
   function Structure($wrapper, resource) {
     ANIMATION_SPEED = 500;
+    this.wrapper = $wrapper.find(".structure-content");
     this.spinner = $wrapper.find(Global.SPINNER);
     this.structureContent = $wrapper.find(Global.STRUCTURE_CONTENT);
     this.resource = `/${resource}/`;
@@ -21,6 +22,9 @@ var Structure = (function(global, $) {
 
       return data;
     }).fail(function() {
+      self.loading.stopLoading(self.spinner);
+      self.structureContent.animate({ opacity: 1 }, ANIMATION_SPEED);
+      self.wrapper.html(`<div class="error-message"><strong>OPS! Houston, we have a problem! </strong><br> <span>But don't you worry, there are a few monkeys working to solve this problem.</span></div>`);
     });
   };
 

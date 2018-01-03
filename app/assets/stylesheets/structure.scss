@@ -3,6 +3,15 @@
 .structure {
   position: relative;
 
+  .error-message{
+    position: relative;
+    height: inherit;
+    font-size: 20px;
+    text-align: center;
+
+  }
+
+
   h3 {
     font-size: 1.6rem;
     font-weight: bold;
