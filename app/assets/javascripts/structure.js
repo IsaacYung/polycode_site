@@ -1,10 +1,11 @@
 var Structure = (function(global, $) {
-  function Structure($wrapper, resource) {
+  function Structure($wrapper, resource, language) {
     ANIMATION_SPEED = 500;
     this.wrapper = $wrapper.find(".structure-content");
     this.spinner = $wrapper.find(Global.SPINNER);
     this.structureContent = $wrapper.find(Global.STRUCTURE_CONTENT);
     this.resource = `/${resource}/`;
+    this.language = language;
 
     this.restClient = new RestClient();
     this.loading = new Loading();
@@ -14,7 +15,7 @@ var Structure = (function(global, $) {
 
   fn.loadData = function() {
     var self = this;
-    var requestPromise = this.restClient.get(this.resource);
+    var requestPromise = this.restClient.get(this.resource, this.language);
 
     return requestPromise.done(function(data) {
       self.structureContent.animate({ opacity: 1 }, ANIMATION_SPEED);

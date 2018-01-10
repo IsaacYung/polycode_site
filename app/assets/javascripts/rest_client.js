@@ -1,7 +1,7 @@
 var RestClient = (function(global, $){
   function RestClient() {
 
-    this.BASEPATH = 'http://f64e4940.ngrok.io/languages';
+    this.BASEPATH = 'http://471e9249.ngrok.io/languages';
 
   }
 
@@ -10,16 +10,10 @@ var RestClient = (function(global, $){
   fn.bindEvents = function () {
   };
 
-  fn.getLanguageName = function () {
-    var url = window.location.pathname
-    var regex = /\/languages\/(.*$)/
-
-    return url.match(regex)[1]
-  }
-
-  fn.get = function (url) {
+  fn.get = function (url, language) {
     var self = this;
-    return $.getJSON(this.BASEPATH + url + this.getLanguageName());
+    return $.getJSON(this.BASEPATH + url + language);
+
   };
 
   return RestClient

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   scope 'languages' do
     get '/:name', to: 'languages#show'
+    get '/:name/vs/:other_name', to: 'languages#compare'
   end
 
   scope 'algorithms' do
