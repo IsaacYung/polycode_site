@@ -1,10 +1,12 @@
 var Integration = (function(global, $) {
-  function Integration($integrationsWrapper) {
+  function Integration($scope, language) {
+    $integrationsWrapper = $scope.find('.integrations-wrapper');
+
     this.structureData = $integrationsWrapper.find('#integration-structure');
     this.spinner = $integrationsWrapper.find('#spinner');
     this.structureContent = $integrationsWrapper.find('.structure-content');
 
-    this.structure = new Structure($integrationsWrapper, 'integrations');
+    this.structure = new Structure($integrationsWrapper, 'integrations', language);
   }
 
   var fn = Integration.prototype

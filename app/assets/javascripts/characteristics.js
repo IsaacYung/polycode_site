@@ -1,10 +1,12 @@
 var Characteristic = (function(global, $) {
-  function Characteristic($characteristicsWrapper) {
+  function Characteristic($scope, language) {
+    $characteristicsWrapper = $scope.find('.characteristics-wrapper');
+
     this.structureData = $characteristicsWrapper.find('#characteristic-structure');
     this.spinner = $characteristicsWrapper.find('#spinner');
     this.structureContent = $characteristicsWrapper.find('.structure-content');
 
-    this.structure = new Structure($characteristicsWrapper, 'characteristics');
+    this.structure = new Structure($characteristicsWrapper, 'characteristics', language);
 
     this.WORDS = {
       "typing": "Typing",

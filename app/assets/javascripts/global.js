@@ -6,10 +6,10 @@ var Global = (function($) {
 
   var fn = Global.prototype
 
-  fn.start = function(language){
-    syntax = new Syntax($('.syntaxes-wrapper'), language);
-    characteristic = new Characteristic($('.characteristics-wrapper'));
-    integration = new Integration($('.integrations-wrapper'));
+  fn.start = function(scope, language){
+    syntax = new Syntax($(scope), language);
+    characteristic = new Characteristic($(scope), language);
+    integration = new Integration($(scope), language);
 
     characteristic.jsonDataExtract();
     syntax.jsonDataExtract();
@@ -34,5 +34,6 @@ var Global = (function($) {
 })(jQuery);
 
 window.onload = function(){
-  Global.start(Global.getLanguageName());
+  Global.start('.init', Global.getLanguageName());
+  Global.start('.other', Global.getOtherLanguageName());
 }

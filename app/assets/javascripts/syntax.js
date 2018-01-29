@@ -1,10 +1,12 @@
 var Syntax = (function(global, $) {
-  function Syntax($syntaxesWrapper, language) {
+  function Syntax($scope, language) {
+    $syntaxesWrapper = $scope.find('.syntaxes-wrapper');
+
     this.structureData = $syntaxesWrapper.find('#syntax-structure');
     this.spinner = $syntaxesWrapper.find('#spinner');
     this.structureContent = $syntaxesWrapper.find('.structure-content');
 
-    this.structure = new Structure($syntaxesWrapper, 'syntaxes', language)
+    this.structure = new Structure($syntaxesWrapper, 'syntaxes', language);
 
     this.WORDS = {
       "loop" : "Loop",
